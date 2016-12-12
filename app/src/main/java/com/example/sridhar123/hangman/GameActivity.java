@@ -38,7 +38,7 @@ public class GameActivity extends AppCompatActivity {
     private Integer numChars,pos;
     private Integer current_count;
     private Character current_letter;
-    private Integer j;
+    private Integer j,k=0;
     private Integer no_letter;
     private static final String TAG="GameActivity";
     private Integer[] flag;
@@ -89,16 +89,21 @@ public class GameActivity extends AppCompatActivity {
 
         String newWord = words[pos];
 
-        while(newWord.equals(currWord) && positionChecked[pos]==0)    //.equals is used to comapare two strings
+        while(positionChecked[pos]==0)    //.equals is used to comapare two strings
             pos = rand.nextInt(words.length);
             newWord = words[pos];
         currWord = newWord;
 
+        k++;
         hintView = (TextView) findViewById(R.id.hint);
         hintView.setText(hints[pos]);
         positionChecked[pos]=0;
 
-
+       if(k==10)
+       {
+           for(int i=0;i<10;i++)
+               positionChecked[i]=1;
+       }
 
         charViews = new TextView[currWord.length()];
         wordLayout.removeAllViews();
