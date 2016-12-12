@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="words">
+        <item>LUMIA</item>
+        <item>SILICONVALLEY</item>
+        <item>COUNTERSTRIKE</item>
+        <item>UBUNTU</item>
+        <item>MSWORD</item>
+        <item>WINDOWS</item>
+        <item>NOUGAT</item>
+        <item>STEVEJOBS</item>
+        <item>FACEBOOK</item>
+        <item>ELONMUSK</item>
+    </string-array>
+</resources>

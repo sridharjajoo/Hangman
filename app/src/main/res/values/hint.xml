@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="hints">
+        <item>"Come to washroom"</item>
+        <item>"Home of all startups"</item>
+        <item>"Shoot shoot"</item>
+        <item>"A salute to humanity"</item>
+        <item>"Female Text Editor"</item>
+        <item>"Let the air come in"</item>
+        <item>"Android's latest release"</item>
+        <item>"Kidney sold"</item>
+        <item>"Employee no. 4"</item>
+        <item>"Here I come Martians"</item>
+
+    </string-array></resources>
