@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="got_answers">
+        <item>"GHOST"</item>
+        <item>"KINGJOFFREY"</item>
+        <item>"MAZDURR"</item>
+        <item>"LANNISTER"</item>
+        <item>"TARGARYEN"</item>
+        <item>"SERDAVOS"</item>
+        <item>"POINTYEND</item>
+        <item>"OLENNATYRELL"</item>
+        <item>"JONSNOW</item>
+        <item>"JONSNOW"</item>
+    </string-array>
+</resources>

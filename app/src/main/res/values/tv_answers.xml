@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tv_answers">
+        <item>"FRIEND"</item>
+        <item>"SILICONVALLEY"</item>
+        <item>"SHERLOCK"</item>
+        <item>"SEINFIELD"</item>
+        <item>"ARROW"</item>
+        <item>"GOT"</item>
+        <item>"DOCTORWHO"</item>
+        <item>"FLASH"</item>
+        <item>"HEROES"</item>
+        <item>"WALKINGDEAD"</item>
+    </string-array>
+</resources>

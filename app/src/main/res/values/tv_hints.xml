@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tv_hints">
+        <item>"How ya doin!"</item>
+        <item>"Always Blue"</item>
+        <item>"Obviously!"</item>
+        <item>"Jerry"</item>
+        <item>"Bow and....."</item>
+        <item>"I know nothing!"</item>
+        <item>"Tom Baker"</item>
+        <item>"Electrifying!"</item>
+        <item>"Salute to the.."</item>
+        <item>"Chalti hui lash...."</item>
+
+
+
+
+    </string-array>
+</resources>

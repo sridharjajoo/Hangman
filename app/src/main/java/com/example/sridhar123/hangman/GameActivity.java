@@ -1,6 +1,7 @@
 package com.example.sridhar123.hangman;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.media.Image;
@@ -23,7 +24,7 @@ import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
-    private String[] words,hints;
+    private String[] words,hints,got_hints,got_answers,tv_answers,tv_hints;
     private Random rand;
     private String currWord;
     private LinearLayout wordLayout;
@@ -38,20 +39,42 @@ public class GameActivity extends AppCompatActivity {
     private Integer numChars,pos;
     private Integer current_count;
     private Character current_letter;
-    private Integer j,k=0;
+    private Integer k=0;
     private Integer no_letter;
     private static final String TAG="GameActivity";
     private Integer[] flag;
+    private int j,key,index1=0,index2=0,index3=0;
     private TextView hintView;
+    private String j1="",j2="",j3="";
     private Integer positionChecked[];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        Bundle b = getIntent().getExtras();
+        index1 =b.getInt("tech");
+        index2 = b.getInt("got");
+        index3 = b.getInt("tv");
+
         Resources resource = getResources();
-        words = resource.getStringArray(R.array.words);
-        hints = resource.getStringArray(R.array.hints);
+        if(index1==1) {
+            words = resource.getStringArray(R.array.words);
+            hints = resource.getStringArray(R.array.hints);
+        }
+
+        else if(index2==2)
+        {
+            got_answers = resource.getStringArray(R.array.got_answers);
+            got_hints = resource.getStringArray(R.array.got_hints);
+        }
+
+        else if(index3==3)
+        {
+            tv_answers=resource.getStringArray(R.array.tv_answers);
+            tv_hints=resource.getStringArray(R.array.tv_hints);
+
+        }
 
         flag = new Integer[26];
         for(int i=0;i<26;i++)
@@ -85,19 +108,50 @@ public class GameActivity extends AppCompatActivity {
         for(int i=0;i<26;i++)
             flag[i]=1;
 
-        pos = rand.nextInt(words.length);
-
-        String newWord = words[pos];
-
-        while(positionChecked[pos]==0)    //.equals is used to comapare two strings
+        if(index1==1) {
             pos = rand.nextInt(words.length);
+            String newWord = words[pos];
+            while (positionChecked[pos] == 0)    //.equals is used to comapare two strings
+                pos = rand.nextInt(words.length);
             newWord = words[pos];
-        currWord = newWord;
+            currWord = newWord;
+            k++;
+            hintView = (TextView) findViewById(R.id.hint);
+            hintView.setText(hints[pos]);
+            positionChecked[pos]=0;
 
-        k++;
-        hintView = (TextView) findViewById(R.id.hint);
-        hintView.setText(hints[pos]);
-        positionChecked[pos]=0;
+        }
+
+        else if(index2==2)
+        {
+
+            pos = rand.nextInt(got_answers.length);
+            String newWord = got_answers[pos];
+            while (positionChecked[pos] == 0)    //.equals is used to comapare two strings
+                pos = rand.nextInt(got_answers.length);
+            newWord = got_answers[pos];
+            currWord = newWord;
+            k++;
+            hintView = (TextView) findViewById(R.id.hint);
+            hintView.setText(got_hints[pos]);
+            positionChecked[pos]=0;
+
+        }
+
+        else if(index3==3)
+        {
+
+            pos = rand.nextInt(tv_answers.length);
+            String newWord = tv_answers[pos];
+            while (positionChecked[pos] == 0)    //.equals is used to comapare two strings
+                pos = rand.nextInt(tv_answers.length);
+            newWord = tv_answers[pos];
+            currWord = newWord;
+            k++;
+            hintView = (TextView) findViewById(R.id.hint);
+            hintView.setText(tv_hints[pos]);
+            positionChecked[pos]=0;
+        }
 
        if(k==10)
        {
@@ -191,7 +245,7 @@ public class GameActivity extends AppCompatActivity {
                         //Toast.makeText(GameActivity.this, "Game Over Mate", Toast.LENGTH_LONG).show();
                         AlertDialog.Builder winBuild = new AlertDialog.Builder(GameActivity.this);
                         winBuild.setTitle("You Loose");
-                        winBuild.setMessage("You got nothing chap!");
+                        winBuild.setMessage("Go jerk off! You are worth nothing -" + currWord);
                         winBuild.setPositiveButton("Play Again",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {

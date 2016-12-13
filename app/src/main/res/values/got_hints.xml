@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="got_hints">
+        <item>"JonSnow Direwolf"</item>
+        <item>"Hurry!Pie is dry"</item>
+        <item>"Drogo Funeral Pyre"</item>
+        <item>"Hear Me Roar"</item>
+        <item>"Fire And Blood"</item>
+        <item>"The Onion Knight"</item>
+        <item>"Stick them with the.."</item>
+        <item>"Queen Of thorns"</item>
+        <item>"Briennes Real Surname"</item>
+        <item>"I know nothing!</item>
+    </string-array>
+</resources>
